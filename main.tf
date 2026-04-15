@@ -21,3 +21,13 @@ module "lb" {
     location = var.location
     rg_name = azurerm_resource_group.rg.name  
 }
+
+module "vmss" {
+  source = "./modules/vmss"
+  prefix = var.prefix
+  location = var.location
+  rg_name = azurerm_resource_group.rg.name
+  subnet_id = module.network.subnet_id
+  backend_pool_id = module.lb.backend_pool_id
+  ssh_key = file("~/.ssh/id_rsa.pub")
+}
