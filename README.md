@@ -150,5 +150,11 @@ No resources were deployed as part of this submission.
 
 ---
 
+## Architecture Diagram
+
+![Architecture](Architecture.png)
+
+---
+
 ## Author
 Vipeen Sekharan
