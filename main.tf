@@ -29,5 +29,5 @@ module "vmss" {
   rg_name = azurerm_resource_group.rg.name
   subnet_id = module.network.subnet_id
   backend_pool_id = module.lb.backend_pool_id
-  ssh_key = file("~/.ssh/id_rsa.pub")
+  ssh_key = var.ssh_public_key
 }

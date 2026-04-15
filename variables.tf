@@ -9,3 +9,9 @@ variable "resource_group_name" {
 variable "prefix" {
   default = "autoheal"
 }
+
+variable "ssh_public_key" {
+  description = "SSH public key for VMSS admin user"
+  type        = string
+  sensitive   = true
+}
