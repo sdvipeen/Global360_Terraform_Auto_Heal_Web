@@ -7,3 +7,10 @@ resource "azurerm_resource_group" "rg" {
     env     = "dev"
   }
 }
+
+module "network" {
+  source = "./modules/network"
+  prefix = var.prefix
+  location = var.location
+  rg_name = azurerm_resource_group.rg.name
+}
